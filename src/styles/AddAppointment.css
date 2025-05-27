@@ -1,0 +1,135 @@
+/* styles/AddAppointment.css */
+
+.add-appointment-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 15px;
+  box-shadow: 
+    8px 8px 15px rgba(0, 0, 0, 0.1),
+    -8px -8px 15px rgba(255, 255, 255, 0.8);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-appointment-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    12px 12px 20px rgba(0, 0, 0, 0.15),
+    -12px -12px 20px rgba(255, 255, 255, 0.9);
+}
+
+.add-appointment-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.appointment-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #34495e;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-form input {
+  padding: 12px 15px;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 
+    inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -3px -3px 5px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.appointment-form input:focus {
+  outline: none;
+  box-shadow: 
+    inset 4px 4px 6px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 6px rgba(255, 255, 255, 0.5),
+    0 0 0 3px rgba(52, 152, 219, 0.3);
+  transform: translateZ(10px);
+}
+
+.appointment-form button {
+  padding: 14px;
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 
+    5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.appointment-form button:hover {
+  transform: translateY(-3px) translateZ(5px);
+  box-shadow: 
+    8px 8px 15px rgba(0, 0, 0, 0.2),
+    -8px -8px 15px rgba(255, 255, 255, 0.6);
+}
+
+.appointment-form button:active {
+  transform: translateY(1px) translateZ(0);
+  box-shadow: 
+    2px 2px 5px rgba(0, 0, 0, 0.1),
+    -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.success-message {
+  margin-top: 1.5rem;
+  padding: 12px;
+  background: linear-gradient(145deg, #2ecc71, #27ae60);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 
+    5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+  animation: fadeIn 0.5s, floatUp 2s infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-appointment-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .appointment-form input {
+    padding: 10px 12px;
+  }
+  
+  .appointment-form button {
+    padding: 12px;
+  }
+}

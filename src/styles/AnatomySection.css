@@ -1,0 +1,213 @@
+
+.dashboard-overview {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-weight: 700;
+}
+
+.week-indicator {
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+    justify-content: right;
+
+  
+}
+
+
+.dashboard-content {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.anatomy-section {
+  flex: 2;
+  min-width: 0; 
+  
+}
+
+.anatomy-container {
+  position: relative;
+  background-color: #f7fafc;
+  border-radius: 10px;
+  padding: 1.25rem;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.body-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+
+.anatomy-marker {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.anatomy-marker.healthy {
+  background-color: rgba(72, 187, 120, 0.15);
+  border: 2px solid #48bb78;
+}
+
+.anatomy-marker.warning {
+  background-color: rgba(237, 137, 54, 0.15);
+  border: 2px solid #ed8936;
+}
+
+.anatomy-marker.critical {
+  background-color: rgba(245, 101, 101, 0.15);
+  border: 2px solid #f56565;
+}
+
+.marker-icon {
+  font-size: 1.1rem;
+}
+
+.anatomy-marker.healthy .marker-icon {
+  color: #48bb78;
+}
+
+.anatomy-marker.warning .marker-icon {
+  color: #ed8936;
+}
+
+.anatomy-marker.critical .marker-icon {
+  color: #f56565;
+}
+
+
+.marker-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.anatomy-marker:hover .marker-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip-title {
+  font-weight: 600;
+  display: block;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+.tooltip-status {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-top: 0.1rem;
+}
+
+
+.health-status-section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  min-width: 0; 
+  
+}
+
+
+.details-section {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.details-link {
+  color: #4299e1;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.details-link:hover {
+  color: #3182ce;
+  text-decoration: underline;
+}
+
+.details-link::after {
+  content: "→";
+  margin-left: 0.25rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 1024px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+  
+  .anatomy-container {
+    height: 280px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-overview {
+    padding: 1.25rem;
+  }
+  
+  .anatomy-container {
+    height: 240px;
+    padding: 1rem;
+  }
+  
+  .anatomy-marker {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .marker-icon {
+    font-size: 1rem;
+  }
+}

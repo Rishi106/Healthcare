@@ -1,0 +1,106 @@
+/* HealthStatusCards.css */
+.health-status-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.health-card {
+  background-color: #ebebec;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.health-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.health-card.healthy {
+  border-left: 4px solid #48bb78;
+}
+
+.health-card.warning {
+  border-left: 4px solid #ed8936;
+}
+
+.card-icon-container {
+  position: relative;
+  margin-right: 1rem;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.card-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.status-icon {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background-color: rgb(183, 211, 246);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.healthy-icon {
+  color: #48bb78;
+  font-size: 0.9rem;
+}
+
+.warning-icon {
+  color: #ed8936;
+  font-size: 0.9rem;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.card-date {
+  margin: 0;
+  font-size: 0.5rem;
+  color: #718096;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .health-card {
+    padding: 0.75rem;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+  }
+  
+  .card-date {
+    font-size: 0.8rem;
+  }
+}
